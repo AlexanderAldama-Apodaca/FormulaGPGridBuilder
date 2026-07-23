@@ -30,7 +30,7 @@ f1_database = {
     },
     "2023": {
         "Alfa Romeo": {"drivers": ["Zhou Guanyu", "Valtteri Bottas"], "speed": "slow"},
-        "AlphaTauri": {"drivers": ["Nyck de Vries", "Yuki Tsunoda"], "speed": "slow"},
+        "AlphaTauri": {"drivers": ["Daniel Ricciardo", "Yuki Tsunoda"], "speed": "slow"},
         "Alpine": {"drivers": ["Pierre Gasly", "Esteban Ocon"], "speed": "medium"},
         "Aston Martin": {"drivers": ["Fernando Alonso", "Lance Stroll"], "speed": "fast"},
         "Ferrari": {"drivers": ["Charles Leclerc", "Carlos Sainz Jr."], "speed": "fast"},
@@ -50,18 +50,18 @@ f1_database = {
         "Mercedes": {"drivers": ["Lewis Hamilton", "George Russell"], "speed": "very fast"},
         "Racing Bulls": {"drivers": ["Daniel Ricciardo", "Yuki Tsunoda"], "speed": "medium"},
         "Red Bull": {"drivers": ["Max Verstappen", "Sergio Perez"], "speed": "very fast"},
-        "Williams": {"drivers": ["Logan Sargeant", "Alexander Albon"], "speed": "slow"}
+        "Williams": {"drivers": ["Alexander Albon", "Franco Colapinto"], "speed": "slow"}
     },
     "2025": {
-        "Alpine": {"drivers": ["Jack Doohan", "Pierre Gasly"], "speed": "slow"},
+        "Alpine": {"drivers": ["Pierre Gasly", "Franco Colapinto"], "speed": "slow"},
         "Aston Martin": {"drivers": ["Fernando Alonso", "Lance Stroll"], "speed": "medium"},
         "Ferrari": {"drivers": ["Charles Leclerc", "Lewis Hamilton"], "speed": "fast"},
         "Haas": {"drivers": ["Esteban Ocon", "Oliver Bearman"], "speed": "slow"},
         "Kick Sauber": {"drivers": ["Gabriel Bortoleto", "Nico Hulkenberg"], "speed": "slow"},
         "McLaren": {"drivers": ["Lando Norris", "Oscar Piastri"], "speed": "very fast"},
         "Mercedes": {"drivers": ["Kimi Antonelli", "George Russell"], "speed": "very fast"},
-        "Racing Bulls": {"drivers": ["Isack Hadjar", "Yuki Tsunoda"], "speed": "medium"},
-        "Red Bull": {"drivers": ["Max Verstappen", "Liam Lawson"], "speed": "very fast"},
+        "Racing Bulls": {"drivers": ["Isack Hadjar", "Liam Lawson"], "speed": "medium"},
+        "Red Bull": {"drivers": ["Max Verstappen", "Yuki Tsunoda"], "speed": "very fast"},
         "Williams": {"drivers": ["Alexander Albon", "Carlos Sainz Jr."], "speed": "fast"}
     },
     "2026": {
