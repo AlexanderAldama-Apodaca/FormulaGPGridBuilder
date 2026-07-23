@@ -98,6 +98,14 @@ f1_database = {
 }
 
 GRID_LIMIT = 6
+
+SPEED_WEIGHTS = {
+    "very fast": 40,
+    "fast": 30,
+    "medium": 20,
+    "slow": 10
+}
+
 active_grid = []
 chosen_teams = set()
 
@@ -153,41 +161,73 @@ for i in range(1, player_count + 1):
         "driver": driver
     })
 
-# Step 4: Automatically fill the remaining grid with weighted bots
+# Speed values mapped to integers for strict tiebreaking comparison
+SPEED_TIERS = {"very fast": 4, "fast": 3, "medium": 2, "slow": 1}
+
+# Step 4: Automatically fill the remaining grid with prioritized bots
 for b in range(1, bot_count + 1):
     remaining_teams = [team for team in all_teams.keys() if team not in chosen_teams]
+    candidate_drivers = []
 
-    current_weights = []
-
+    # Evaluate every single available driver in the remaining field
     for team in remaining_teams:
         team_info = all_teams[team]
-        base_speed = team_info["speed"]
 
-        # Base weight lookup
-        if base_speed == "very fast": weight = 40
-        elif base_speed == "fast": weight = 30
-        elif base_speed == "medium": weight = 20
-        else: weight = 10
+        for driver in team_info["drivers"]:
+            # Rule checking
+            is_driver_home = (team_info["driver_countries"][driver] == gp_country)
+            is_team_home = (team_info["team_country"] == gp_country)
 
-        # Check home GP criteria
-        is_team_home = (team_info["team_country"] == gp_country)
-        is_driver_home = any(team_info["driver_countries"][d] == gp_country for d in team_info["drivers"])
+            # Categorize into strict numerical priorities
+            if is_driver_home:
+                priority = 3 # Rule 1: Driver Home GP
+            elif is_team_home:
+                priority = 2 # Rule 2: Team Home GP
+            else:
+                priority = 1
 
-        # Apply conditional weight boosts
-        if is_team_home and is_driver_home:
-            weight += 20
-        elif is_team_home or is_driver_home:
-            weight += 10
+            candidate_drivers.append({
+                "driver": driver,
+                "team": team,
+                "priority": priority,
+                "speed_score": SPEED_TIERS[team_info["speed"]]
+            })
 
-        current_weights.append(weight)
+    if not candidate_drivers:
+        break
 
-    # Weighted random team selection
-    bot_team = random.choices(remaining_teams, weights=current_weights, k=1)[0]
+    # Find the maximum prioority level present in the remaining pool
+    max_priority = max(c["priority"] for c in candidate_drivers)
+
+    # Filter candidates to only include those in the highest available priority bracket
+    top_bracket = [c for c in candidate_drivers if c["priority"] == max_priority]
+
+    if max_priority > 1:
+        # Tiebreaker Active: Home Advantage Scenario
+        # Filter down further to highest speed rating within this home bracket
+        max_speed = max(c["speed_score"] for c in top_bracket)
+        final_pool = [c for c in top_bracket if c["speed_score"] == max_speed]
+
+        # If still tied, randomly choose one
+        selected_bot = random.choice(final_pool)
+
+    else:
+        # No Home Ties: Standard Scenario
+        teams_in_pool = list(set(c["team"] for c in top_bracket))
+        current_weights = [SPEED_WEIGHTS[all_teams[t]["speed"]] for t in teams_in_pool]
+
+        # Choose team by probability weight
+        chosen_bot_team = random.choices(teams_in_pool, weights=current_weights, k=1)[0]
+
+        # Pick a random driver from that team
+        drivers_on_team = [c for c in top_bracket if c["team"] == chosen_bot_team]
+        selected_bot = random.choice(drivers_on_team)
+
+    # Commit choices to grid
+    bot_team = selected_bot["team"]
+    bot_driver = selected_bot["driver"]
+
     chosen_teams.add(bot_team)
-
-    # Pick a random driver from that team
-    bot_driver = random.choice(all_teams[bot_team]["drivers"])
-
     active_grid.append({
         "type": "Bot",
         "team": bot_team,
