@@ -164,7 +164,7 @@ for b in range(1, bot_count + 1):
         base_speed = team_info["speed"]
 
         # Base weight lookup
-        if base_speed == "very_fast": weight = 40
+        if base_speed == "very fast": weight = 40
         elif base_speed == "fast": weight = 30
         elif base_speed == "medium": weight = 20
         else: weight = 10
