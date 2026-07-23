@@ -94,7 +94,11 @@ chosen_teams = set() # Tracks teams already taken
 # Determine players and bots
 player_count = int(input(f"Enter number of human players (1-{GRID_LIMIT}): "))
 bot_count = GRID_LIMIT - player_count
-print(f"Setting up game with {player_count} players and {bot_count} bots.\n")
+
+if player_count == 1:
+    print(f"Setting up game with {player_count} player and {bot_count} bots.\n")
+else:
+    print(f"Setting up game with {player_count} players and {bot_count} bots.\n")
 
 # Choose Formula One season
 selected_season = input("Enter F1 Season (2021-2026): ")
