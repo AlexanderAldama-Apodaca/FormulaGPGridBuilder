@@ -26,7 +26,7 @@ f1_database = {
         "McLaren": {"drivers": ["Daniel Ricciardo", "Lando Norris"], "speed": "fast"},
         "Mercedes": {"drivers": ["Lewis Hamilton", "George Russell"], "speed": "very fast"},
         "Red Bull": {"drivers": ["Max Verstappen", "Sergio Perez"], "speed": "very fast"},
-        "Williams": {"drivers": ["Nicholas Latifi", "Alexander Albon"], "speed": "very fast"}
+        "Williams": {"drivers": ["Nicholas Latifi", "Alexander Albon"], "speed": "slow"}
     },
     "2023": {
         "Alfa Romeo": {"drivers": ["Zhou Guanyu", "Valtteri Bottas"], "speed": "slow"},
