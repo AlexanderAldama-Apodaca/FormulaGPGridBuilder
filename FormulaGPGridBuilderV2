@@ -80,7 +80,7 @@ f1_database = {
         }
     },
     "2026": {
-        "countries": ["Australia", "China", "Japan", "Canada", "Monaco", "Austria", "United Kingdom", "Belgium", "Hungary", "Netherlands", "Italy", "Spain", "Azerbaijan", "Singapore", "United States", "Mexico", "Brazil", "Qatar", "United Arab Emirates"],
+        "countries": ["Australia", "China", "Japan", "Canada", "Monaco", "Austria", "United Kingdom", "Belgium", "Hungary", "Netherlands", "Italy", "Spain", "Azerbaijan", "Malaysia", "Singapore", "United States", "Mexico", "Brazil", "Qatar", "United Arab Emirates"],
         "teams": {
             "Alpine": {"team_country": "France", "drivers": ["Pierre Gasly", "Franco Colapinto"], "driver_countries": {"Pierre Gasly": "France", "Franco Colapinto": "Argentina"}, "speed": "medium"},
             "Aston Martin": {"team_country": "United Kingdom", "drivers": ["Fernando Alonso", "Lance Stroll"], "driver_countries": {"Fernando Alonso": "Spain", "Lance Stroll": "Canada"}, "speed": "slow"},
