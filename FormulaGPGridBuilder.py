@@ -4,6 +4,54 @@ print("FormulaGP Grid Builder\n")
 
 # Historical Formula One data (seasons, teams, and drivers) with speed ratings
 f1_database = {
+    "2017": {
+        "Ferrari": {"drivers": ["Sebastian Vettel", "Kimi Raikkonen"], "speed": "very fast"},
+        "Force India": {"drivers": ["Sergio Perez", "Esteban Ocon"], "speed": "fast"},
+        "Haas": {"drivers": ["Romain Grosjean", "Kevin Magnussen"], "speed": "slow"},
+        "McLaren": {"drivers": ["Stoffel Vandoorne", "Fernando Alonso"], "speed": "slow"},
+        "Mercedes": {"drivers": ["Lewis Hamilton", "Valtteri Bottas"], "speed": 'very fast'},
+        "Red Bull": {"drivers": ["Daniel Ricciardo", "Max Verstappen"], "speed": "fast"},
+        "Renault": {"drivers": ["Nico Hulkenberg", "Carlos Sainz Jr."], "speed": "medium"},
+        "Sauber": {"drivers": ["Marcus Ericsson", "Pascal Wehrlein"], "speed": "slow"},
+        "Toro Rosso": {"drivers": ["Pierre Gasly", "Brendon Hartley"], "speed": "slow"},
+        "Williams": {"drivers": ["Lance Stroll", "Felipe Massa"], "speed": "medium"}
+    },
+    "2018": {
+        "Ferrari": {"drivers": ["Sebastian Vettel", "Kimi Raikkonen"], "speed": "very fast"},
+        "Force India": {"drivers": ["Sergio Perez", "Esteban Ocon"], "speed": "medium"},
+        "Haas": {"drivers": ["Romain Grosjean", "Kevin Magnussen"], "speed": "medium"},
+        "McLaren": {"drivers": ["Stoffel Vandoorne", "Fernando Alonso"], "speed": "medium"},
+        "Mercedes": {"drivers": ["Lewis Hamilton", "Valtteri Bottas"], "speed": "very fast"},
+        "Red Bull": {"drivers": ["Daniel Ricciardo", "Max Verstappen"], "speed": "very fast"},
+        "Renault": {"drivers": ["Nico Hulkenberg", "Carlos Sainz Jr."], "speed": "medium"},
+        "Sauber": {"drivers": ["Marcus Ericsson", "Charles Leclerc"], "speed": "slow"},
+        "Toro Rosso": {"drivers": ["Pierre Gasly", "Brendon Hartley"], "speed": "slow"},
+        "Williams": {"drivers": ["Lance Stroll", "Sergey Sirotkin"], "speed": "slow"}
+    },
+    "2019": {
+        "Alfa Romeo": {"drivers": ["Kimi Raikkonen", "Antonio Giovinazzi"], "speed": "medium"},
+        "Ferrari": {"drivers": ["Sebastian Vettel", "Charles Leclerc"], "speed": "very fast"},
+        "Haas": {"drivers": ["Romain Grosjean", "Kevin Magnussen"], "speed": "slow"},
+        "McLaren": {"drivers": ["Lando Norris", "Carlos Sainz Jr."], "speed": "fast"},
+        "Mercedes": {"drivers": ["Lewis Hamilton", "Valtteri Bottas"], "speed": "very fast"},
+        "Racing Point": {"drivers": ["Sergio Perez", "Lance Stroll"], "speed": "medium"},
+        "Red Bull": {"drivers": ["Pierre Gasly", "Max Verstappen"], "speed": "very fast"},
+        "Renault": {"drivers": ["Daniel Ricciardo", "Nico Hulkenberg"], "speed": "medium"},
+        "Toro Rosso": {"drivers": ["Alexander Albon", "Daniil Kvyat"], "speed": "medium"},
+        "Williams": {"drivers": ["George Russesll", "Robert Kubica"], "speed": "slow"}
+    },
+    "2020": {
+        "Alfa Romeo": {"drivers": ["Kimi Raikkonen", "Antonio Giovinazzi"], "speed": "slow"},
+        "AlphaTauri": {"drivers": ["Pierre Gasly", "Daniil Kvyat"], "speed": "medium"},
+        "Ferrari": {"drivers": ["Sebastian Vettel", "Charles Leclerc"], "speed": "medium"},
+        "Haas": {"drivers": ["Romain Grosjean", "Kevin Magnussen"], "speed": "slow"},
+        "McLaren": {"drivers": ["Lando Norris", "Carlos Sainz Jr."], "speed": "fast"},
+        "Mercedes": {"drivers": ["Lewis Hamilton", "Valtteri Bottas"], "speed": "very fast"},
+        "Racing Point": {"drivers": ["Sergio Perez", "Lance Stroll"], "speed": "fast"},
+        "Red Bull": {"drivers": ["Alexander Albon", "Max Verstappen"], "speed": "fast"},
+        "Renault": {"drivers": ["Daniel Ricciardo", "Esteban Ocon"], "speed": "fast"},
+        "Williams": {"drivers": ["Nicholas Latifi", "George Russell"], "speed": "slow"}
+    },
     "2021": {
         "Alfa Romeo": {"drivers": ["Kimi Raikkonen", "Antonio Giovinazzi"], "speed": "slow"},
         "AlphaTauri": {"drivers": ["Pierre Gasly", "Yuki Tsunoda"], "speed": "medium"},
@@ -101,7 +149,7 @@ else:
     print(f"Setting up game with {player_count} players and {bot_count} bots.\n")
 
 # Choose Formula One season
-selected_season = input("Enter F1 Season (2021-2026): ")
+selected_season = input("Enter F1 Season (2017-2026): ")
 all_teams = f1_database[selected_season]
 
 # Collect player selections
