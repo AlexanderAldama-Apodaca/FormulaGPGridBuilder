@@ -4,6 +4,44 @@ print("FormulaGP Grid Builder\n")
 
 # Historical Formula One data (seasons, teams, and drivers) with speed ratings
 f1_database = {
+    "2014": {
+        "Caterham": {"drivers": ["Marcus Ericsson", "Kamui Kobayashi"], "speed": "slow"},
+        "Ferrari": {"drivers": ["Kimi Raikkonen", "Fernando Alonso"], "speed": "fast"},
+        "Force India": {"drivers": ["Sergio Perez", "Nico Hulkenberg"], "speed": "fast"},
+        "Lotus": {"drivers": ["Romain Grosjean", "Pastor Maldonado"], "speed": "slow"},
+        "Marussia": {"drivers": ["Max Chilton", "Jules Bianchi"], "speed": "slow"},
+        "McLaren": {"drivers": ["Kevin Magnussen", "Jenson Button"], "speed": "fast"},
+        "Mercedes": {"drivers": ["Nico Rosberg", "Lewis Hamilton"], "speed": "very fast"},
+        "Red Bull": {"drivers": ["Sebastian Vettel", "Daniel Ricciardo"], "speed": "very fast"},
+        "Sauber": {"drivers": ["Esteban Gutierrez", "Adrian Sutil"], "speed": "slow"},
+        "Toro Rosso": {"drivers": ["Jean-Eric Vergne", "Daniil Kvyat"], "speed": "slow"},
+        "Williams": {"drivers": ["Felipe Massa", "Valtteri Bottas"], "speed": "fast"}
+    },
+    "2015": {
+        "Ferrari": {"drivers": ["Sebastian Vettel", "Kimi Raikkonen"], "speed": "very fast"},
+        "Force India": {"drivers": ["Sergio Perez", "Nico Hulkenberg"], "speed": "medium"},
+        "Lotus": {"drivers": ["Romain Grosjean", "Pastor Maldonado"], "speed": "medium"},
+        "Marussia": {"drivers": ["Will Stevens", "Roberto Merhi"], "speed": "slow"},
+        "McLaren": {"drivers": ["Fernando Alonso", "Jenson Button"], "speed": "slow"},
+        "Mercedes": {"drivers": ["Nico Rosberg", "Lewis Hamilton"], "speed": "very fast"},
+        "Red Bull": {"drivers": ["Daniel Ricciardo", "Daniil Kvyat"], "speed": "fast"},
+        "Sauber": {"drivers": ["Marcus Ericsson", "Felipe Nasr"], "speed": "slow"},
+        "Toro Rosso": {"drivers": ["Max Verstappen", "Carlos Sainz Jr."], "speed": "medium"},
+        "Williams": {"drivers": ["Felipe Massa", "Valtteri Bottas"], "speed": "fast"}
+    },
+    "2016": {
+        "Ferrari": {"drivers": ["Sebastian Vettel", "Kimi Raikkonen"], "speed": "very fast"},
+        "Force India": {"drivers": ["Sergio Perez", "Nico Hulkenberg"], "speed": "fast"},
+        "Haas": {"drivers": ["Romain Grosjean", "Esteban Gutierrez"], "speed": "slow"},
+        "Manor": {"drivers": ["Rio Haryanto", "Pascal Wehrlein"], "speed": "slow"},
+        "McLaren": {"drivers": ["Fernando Alonso", "Jenson Button"], "speed": "medium"},
+        "Mercedes": {"drivers": ["Nico Rosberg", "Lewis Hamilton"], "speed": "very fast"},
+        "Red Bull": {"drivers": ["Daniel Ricciardo", "Max Verstappen"], "speed": "very fast"},
+        "Renault": {"drivers": ["Kevin Magnussen", "Jolyon Palmer"], "speed": "slow"},
+        "Sauber": {"drivers": ["Marcus Ericsson", "Felipe Nasr"], "speed": "slow"},
+        "Toro Rosso": {"drivers": ["Daniil Kvyat", "Carlos Sainz Jr."], "speed": "medium"},
+        "Williams": {"drivers": ["Felipe Massa", "Valtteri Bottas"], "speed": "medium"}
+    },
     "2017": {
         "Ferrari": {"drivers": ["Sebastian Vettel", "Kimi Raikkonen"], "speed": "very fast"},
         "Force India": {"drivers": ["Sergio Perez", "Esteban Ocon"], "speed": "fast"},
@@ -149,7 +187,7 @@ else:
     print(f"Setting up game with {player_count} players and {bot_count} bots.\n")
 
 # Choose Formula One season
-selected_season = input("Enter F1 Season (2017-2026): ")
+selected_season = input("Enter F1 Season (2014-2026): ")
 all_teams = f1_database[selected_season]
 
 # Collect player selections
