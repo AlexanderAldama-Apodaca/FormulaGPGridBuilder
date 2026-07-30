@@ -4,6 +4,73 @@ print("FormulaGP Grid Builder\n")
 
 # Historical Formula One data (seasons, teams, and drivers) with speed ratings
 f1_database = {
+    "2009": {
+        "McLaren": {"drivers": ["Lewis Hamilton", "Heikki Kovalainen"], "speed": "fast"},
+        "Ferrari": {"drivers": ["Felipe Massa", "Kimi Raikkonen"], "speed": "fast"},
+        "BMW Sauber": {"drivers": ["Robert Kubica", "Nick Heidfeld"], "speed": "medium"},
+        "Renault": {"drivers": ["Fernando Alonso", "Nelson Piquet Jr."], "speed": "medium"},
+        "Toyota": {"drivers": ["Jarno Trulli", "Timo Glock"], "speed": "fast"},
+        "Toro Rosso": {"drivers": ["Sebastien Bourdais", "Sebastien Buemi"], "speed": "slow"},
+        "Red Bull": {"drivers": ["Mark Webber", "Sebastian Vettel"], "speed": "very fast"},
+        "Williams": {"drivers": ["Nico Rosberg", "Kazuki Nakajima"], "speed": "medium"},
+        "Force India": {"drivers": ["Adrian Sutil", "Giancarlo Fisichella"], "speed": "slow"},
+        "Brawn": {"drivers": ["Jenson Button", "Rubens Barrichello"], "speed": "very fast"}
+    },
+    "2010": {
+        "McLaren": {"drivers": ["Jenson Button", "Lewis Hamilton"], "speed": "very fast"},
+        "Mercedes": {"drivers": ["Michael Schumacher", "Nico Rosberg"], "speed": "fast"},
+        "Red Bull": {"drivers": ["Sebastian Vettel", "Mark Webber"], "speed": "very fast"},
+        "Ferrari": {"drivers": ["Felipe Massa", "Fernando Alonso"], "speed": "fast"},
+        "Williams": {"drivers": ["Rubens Barrichello", "Nico Hulkenberg"], "speed": "medium"},
+        "Renault": {"drivers": ["Robert Kubica", "Vitaly Petrov"], "speed": "fast"},
+        "Force India": {"drivers": ["Adrian Sutil", "Vitantonio Liuzzi"], "speed": "medium"},
+        "Toro Rosso": {"drivers": ["Sebastien Buemi", "Jaime Alguersuari"], "speed": "slow"},
+        "Lotus": {"drivers": ["Jarno Trulli", "Heikki Kovalainen"], "speed": "slow"},
+        "HRT": {"drivers": ["Karun Chandhok", "Bruno Senna"], "speed": "slow"},
+        "BMW Sauber": {"drivers": ["Pedro de la Rosa", "Kamui Kobayashi"], "speed": "slow"},
+        "Virgin": {"drivers": ["Timo Glock", "Lucas di Grassi"], "speed": "slow"}
+    },
+    "2011": {
+        "Red Bull": {"drivers": ["Sebastian Vettel", "Mark Webber"], "speed": "very fast"},
+        "McLaren": {"drivers": ["Lewis Hamilton", "Jenson Button"], "speed": "very fast"},
+        "Ferrari": {"drivers": ["Fernando Alonso", "Felipe Massa"], "speed": "fast"},
+        "Mercedes": {"drivers": ["Michael Schumacher", "Nico Rosberg"], "speed": "fast"},
+        "Renault": {"drivers": ["Nick Heidfeld", "Vitaly Petrov"], "speed": "medium"},
+        "Williams": {"drivers": ["Rubens Barrichello", "Pastor Maldonado"], "speed": "slow"},
+        "Force India": {"drivers": ["Adrian Sutil", "Paul di Resta"], "speed": "medium"},
+        "Sauber": {"drivers": ["Kamui Kobayashi", "Sergio Perez"], "speed": "slow"},
+        "Toro Rosso": {"drivers": ["Sebastien Buemi", "Jaime Alguersuari"], "speed": "slow"},
+        "Lotus": {"drivers": ["Heikki Kovalainen", "Jarno Trulli"], "speed": "slow"},
+        "HRT": {"drivers": ["Daniel Ricciardo", "Vitantonio Liuzzi"], "speed": "slow"},
+        "Virgin": {"drivers": ["Timo Glock", "Jerome d'Ambrosio"], "speed": "slow"}
+    },
+    "2012": {
+        "Red Bull": {"drivers": ["Sebastian Vettel", "Mark Webber"], "speed": "very fast"},
+        "McLaren": {"drivers": ["Jenson Button", "Lewis Hamilton"], "speed": "fast"},
+        "Ferrari": {"drivers": ["Fernando Alonso", "Felipe Massa"], "speed": "very fast"},
+        "Mercedes": {"drivers": ["Michael Schumacher", "Nico Rosberg"], "speed": "medium"},
+        "Lotus": {"drivers": ["Kimi Raikkonen", "Romain Grosjean"], "speed": "fast"},
+        "Force India": {"drivers": ["Paul di Resta", "Nico Hulkenberg"], "speed": "medium"},
+        "Sauber": {"drivers": ["Kamui Kobayashi", "Sergio Perez"], "speed": "medium"},
+        "Toro Rosso": {"drivers": ["Daniel Ricciardo", "Jean-Eric Vergne"], "speed": "slow"},
+        "Williams": {"drivers": ["Pastor Maldonado", "Bruno Senna"], "speed": "medium"},
+        "Caterham": {"drivers": ["Heikki Kovalainen", "Vitaly Petrov"], "speed": "slow"},
+        "HRT": {"drivers": ["Pedro de la Rosa", "Narain Karthikeyan"], "speed": "slow"},
+        "Marussia": {"drivers": ["Timo Glock", "Charles Pic"], "speed": "slow"}
+    },
+    "2013": {
+        "Red Bull": {"drivers": ["Sebastian Vettel", "Mark Webber"], "speed": "very fast"},
+        "Ferrari": {"drivers": ["Fernando Alonso", "Felipe Massa"], "speed": "fast"},
+        "McLaren": {"drivers": ["Jenson Button", "Sergio Perez"], "speed": "medium"},
+        "Lotus": {"drivers": ["Kimi Raikkonen", "Romain Grosjean"], "speed": "fast"},
+        "Mercedes": {"drivers": ["Nico Rosberg", "Lewis Hamilton"], "speed": "fast"},
+        "Sauber": {"drivers": ["Nico Hulkenberg", "Esteban Gutierrez"], "speed": "medium"},
+        "Force India": {"drivers": ["Paul di Resta", "Adrian Sutil"], "speed": "medium"},
+        "Williams": {"drivers": ["Pastor Maldonado", "Valtteri Bottas"], "speed": "slow"},
+        "Toro Rosso": {"drivers": ["Jean-Eric Vergne", "Daniel Ricciardo"], "speed": "slow"},
+        "Caterham": {"drivers": ["Charles Pic", "Giedo van der Garde"], "speed": "slow"},
+        "Marussia": {"drivers": ["Jules Bianchi", "Max Chilton"], "speed": "slow"}
+    },
     "2014": {
         "Caterham": {"drivers": ["Marcus Ericsson", "Kamui Kobayashi"], "speed": "slow"},
         "Ferrari": {"drivers": ["Kimi Raikkonen", "Fernando Alonso"], "speed": "fast"},
@@ -187,7 +254,7 @@ else:
     print(f"Setting up game with {player_count} players and {bot_count} bots.\n")
 
 # Choose Formula One season
-selected_season = input("Enter F1 Season (2014-2026): ")
+selected_season = input("Enter F1 Season (2009-2026): ")
 all_teams = f1_database[selected_season]
 
 # Collect player selections
